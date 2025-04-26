@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Morning, Beautiful!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right top, #ffd6e0, #ffe6f0);
+      font-family: 'Pacifico', cursive;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff69b4;
+      margin-bottom: 30px;
+    }
+
+    .cute-button {
+      background-color: #ffb6c1;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .cute-button:hover {
+      background-color: #ff69b4;
+      transform: scale(1.05);
+    }
+
+    #image-container {
+      margin-top: 30px;
+      display: none;
+    }
+
+    #image-container img {
+      width: 200px;
+      border-radius: 50%;
+      border: 5px solid #fff0f5;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      animation: float 10s infinite ease-in;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-120vh); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Good Morning, KC! ☀️🌸</h1>
+    <button class="cute-button" onclick="showSurprise()">May your day be as bright as your smile. ☀️💖</button>
+    <div id="image-container">
+      <img src="./kc.jpg" alt="Your Cute Pic">
+    </div>
+  </div>
+
+  <script>
+    function createBalloons() {
+      for (let i = 0; i < 20; i++) {
+        const balloon = document.createElement("div");
+        balloon.classList.add("balloon");
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.width = "30px";
+        balloon.style.height = "40px";
+        balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 80%)`;
+        balloon.style.borderRadius = "50% 50% 50% 50% / 60% 60% 40% 40%";
+        balloon.style.animationDuration = `${5 + Math.random() * 5}s`;
+        document.body.appendChild(balloon);
+      }
+    }
+
+    function showSurprise() {
+      document.getElementById("image-container").style.display = "block";
+      createBalloons();
+    }
+  </script>
+</body>
+</html>
