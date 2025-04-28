@@ -45,14 +45,14 @@
       transform: scale(1.05);
     }
 
-    #image-container {
+    #media-container {
       margin-top: 30px;
       display: none;
     }
 
-    #image-container img {
-      width: 200px;
-      border-radius: 50%;
+    #media-container video {
+      width: 250px;
+      border-radius: 20px;
       border: 5px solid #fff0f5;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
@@ -73,8 +73,11 @@
   <div class="container">
     <h1>Good Morning, KC! ☀️🌸</h1>
     <button class="cute-button" onclick="showSurprise()">May your day be as bright as your smile. ☀️💖</button>
-    <div id="image-container">
-      <img src="./kc.jpg" alt="Your Cute Pic">
+    <div id="media-container">
+      <video controls>
+        <source src="./VID-20250413-WA0020.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 
@@ -94,7 +97,7 @@
     }
 
     function showSurprise() {
-      document.getElementById("image-container").style.display = "block";
+      document.getElementById("media-container").style.display = "block";
       createBalloons();
     }
   </script>
