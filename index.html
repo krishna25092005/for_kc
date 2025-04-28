@@ -74,7 +74,7 @@
     <h1>Good Morning, KC! ☀️🌸</h1>
     <button class="cute-button" onclick="showSurprise()">May your day be as bright as your smile. ☀️💖</button>
     <div id="media-container">
-      <video controls>
+      <video id="myVideo" muted>
         <source src="./VID-20250413-WA0020.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -98,6 +98,8 @@
 
     function showSurprise() {
       document.getElementById("media-container").style.display = "block";
+      const video = document.getElementById("myVideo");
+      video.play();
       createBalloons();
     }
   </script>
